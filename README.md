@@ -111,7 +111,7 @@ Después renombré temporalmente `.gitignore` a `.gitignore.off` y repetí el co
 La fecha cambia en cada ejecución. Si entrara en el hash, el mismo mundo tendría un id distinto cada vez, y el programa nunca encontraría los archivos anteriores. Entonces llamaría de nuevo a las APIs y gastaría cuota sin necesidad. Sin la fecha, los mismos datos siempre producen el mismo id.
 
 **2. ¿Por qué se le pide al modelo de texto la descripción en inglés?**
-Los modelos de imágenes se entrenaron sobre todo con descripciones en inglés, así que lo entienden mejor y suelen producir imágenes más fieles al texto. **[COMPLETAR solo si lo probaste: comparé con una descripción en español y observé que ...]** Si no lo probaste, no lo afirmes.
+Los modelos de imágenes se entrenaron sobre todo con descripciones en inglés, así que lo entienden mejor y suelen producir imágenes más fieles al texto. Si no lo probaste, no lo afirmes.
 
 **3. ¿Qué diferencia hay entre una respuesta JSON de texto y una respuesta con los bytes de una imagen? ¿Qué es base64?**
 La respuesta de texto trae el contenido directamente en `choices[0].message.content` y se puede guardar tal cual. Una imagen son bytes binarios, y JSON solo puede llevar texto, por eso la imagen llega codificada en base64. Base64 es una forma de representar bytes usando solo caracteres de texto. Para guardarla hay que decodificarla con `Buffer.from(texto, 'base64')`.
